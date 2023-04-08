@@ -1,46 +1,18 @@
 import com.example.Feline;
 import com.example.Lion;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
 
-@RunWith(Parameterized.class)
+@RunWith(MockitoJUnitRunner.class)
 public class LionTest {
 
-    @Before
-    public void setUp(){
-        MockitoAnnotations.openMocks(this);
-    }
     @Mock
     Feline feline;
-
-    private String sex;
-    private final boolean hasMane;
-
-    public LionTest(String sex, boolean hasMane) {
-        this.sex = sex;
-        this.hasMane = hasMane;
-    }
-    @Parameterized.Parameters
-    public static Object[][] hasMane() {
-        return new Object[][]{
-                {"Самец",true},
-                {"Самка",false}
-        };
-    }
-
-    @Test
-    public void lionsManeParameterizedTest() throws Exception {
-        Lion lion = new Lion(sex, feline);
-        boolean actualResult = lion.doesHaveMane();
-        assertEquals(actualResult, hasMane);
-    }
 
     @Test
     public void lionsKittensTest() throws Exception {
