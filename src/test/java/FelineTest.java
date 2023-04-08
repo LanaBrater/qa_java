@@ -1,9 +1,5 @@
 import com.example.Feline;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
 
@@ -32,7 +28,7 @@ public class FelineTest {
     }
 
     @Test
-    public void getKittensCountMockTest() {
+    public void getKittensCountTest() {
         int kittensCount = 1;
         int actualResult = feline.getKittens(kittensCount);
         assertEquals(kittensCount, actualResult);
